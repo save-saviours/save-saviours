@@ -15,6 +15,7 @@ import AboutPage from 'pages/AboutPage/AboutPage'
 import ImpressumPage from 'pages/ImpressumPage/ImpressumPage'
 import DatasecurityPage from 'pages/DatasecurityPage/DatasecurityPage'
 import InstitutionRegistrationPage from 'pages/RegistrationPage/InstitutionRegistrationPage'
+import InstitutionProfilePage from 'pages/InstitutionProfilePage/InstitutionProfilePage'
 
 import TopAppBar from 'components/TopAppBar/TopAppBar'
 import BottomAppBar from 'components/BottomAppBar/BottomAppBar'
@@ -42,6 +43,7 @@ const App = () => {
     { path: pages.helperslist, component: HelpersListPage },
     { path: pages.vetting, component: VettingPage },
     { path: pages.institutionconfirmation, component: InstitutionConfirmationPage },
+    { path: pages.institutionprofile, component: InstitutionProfilePage },
   ]
   return (
     <Router>
@@ -49,7 +51,7 @@ const App = () => {
         <CssBaseline />
         <TopAppBar />
         <div className={classes.offset} />
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" className={classes.appContainer}>
           <Switch>
             {routes.map(({ path, component }) => (
               <Route exact path={path} key={path} component={component} />

@@ -5,6 +5,11 @@ export default () => {
   const useStyles = makeStyles({
     // ADJUSTMENT TOP BAR
     offset: theme.mixins.toolbar,
+    // APP
+    appContainer: {
+      paddingLeft: 10,
+      paddingRight: 10,
+    },
     // CONFIRMATION
     confirmationFacebook: {
       backgroundColor: '#4267b2',
@@ -159,6 +164,17 @@ export default () => {
     landingHeader: {
       paddingTop: 10,
       paddingBottom: 20,
+      margin: 0,
+      '@media (max-width: 600px)': {
+        paddingTop: 5,
+        paddingLeft: 0,
+        paddingRight: 0,
+        paddingBottom: 10,
+      },
+    },
+    landingContainer: {
+      marginLeft: 0,
+      width: '100%',
     },
     landingText: {
       paddingTop: 5,
@@ -178,6 +194,19 @@ export default () => {
     },
     landingSupporterImage: {
       maxWidth: 500,
+      '@media (max-width: 600px)': {
+        maxWidth: 300,
+      },
+    },
+    landingSupporterHeader: {
+      paddingTop: 10,
+      paddingBottom: 20,
+      paddingLeft: 15,
+      margin: 0,
+      '@media (max-width: 600px)': {
+        fontSize: '1.1rem',
+        paddingLeft: 5,
+      },
     },
     // REGISTRATION
     registrationGrid: {

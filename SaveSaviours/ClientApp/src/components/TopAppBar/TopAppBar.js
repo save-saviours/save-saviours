@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import { Link } from '@material-ui/core'
-import logo from 'assets/logo.png'
+import logo from 'assets/images/logo.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,14 +31,17 @@ const useStyles = makeStyles((theme) => ({
     opacity: 1,
     marginTop: 5,
     [`@media (max-width: ${theme.breakpoints.values.sm}px)`]: {
-      maxHeight: 80,
+      maxHeight: 65,
     },
   },
   icon: {
     position: 'absolute',
     right: 20,
+    color: theme.palette.primary.dark,
+    opacity: 0.9,
     [`@media (max-width: ${theme.breakpoints.values.sm}px)`]: {
-      right: -10,
+      right: 0,
+      top: 10,
     },
   },
   appBar: {
@@ -53,8 +56,8 @@ export default function TopAppBar() {
   const scrollStyle = `${classes.appBar}`
 
   const handleLogOut = () => {
-      window.localStorage.clear()
-      window.location='/signin'
+    window.localStorage.clear()
+    window.location = '/signin'
   }
   return (
     <AppBar
@@ -66,15 +69,15 @@ export default function TopAppBar() {
       <Toolbar>
         <div className={classes.wrapperWrapper}>
           <div className={classes.wrapper}>
-              <span onClick={()=>handleLogOut()}>
-                <IconButton
-                  className={classes.icon}
-                  color="inherit"
-                >
-                  <AccountCircle fontSize="large" />
-                </IconButton>
-              </span>
-            
+            <span onClick={() => handleLogOut()}>
+              <IconButton
+                className={classes.icon}
+                color="inherit"
+              >
+                <AccountCircle fontSize="large" />
+              </IconButton>
+            </span>
+
             <Link href="/">
               <img src={image} alt="logo" className={classes.logo} />
             </Link>
